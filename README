@@ -1,0 +1,20 @@
+===========Backchannel Application===============
+Author: Gaurav Tungatkar
+
+Description:
+Backchannel application that allows students in a class to give live feedback on
+various topics. It is a forum type format where students can write posts, cheer
+others' posts and reply to other posts. Admin users can delete users, grant or
+revoke admin privileges to other users and get a report on the posts with
+maximum cheers, etc.
+
+Rationale: 
+The rationale behind this was to encourage students to post links or additional
+tidbits of info about topics discussed in class. Others should respond to these
+posts and cheer if they like them. Students can get credit for valuable links
+that expand on certain topics in class and are popular amongst other students.
+
+Limitations:
+First ever project using Ruby on Rails. Front-end is shabby, tried to get the
+server side functionality working! :)
+
