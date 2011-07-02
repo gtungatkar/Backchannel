@@ -1,0 +1,14 @@
+<div id="container">
+    <div id="main">
+    	<b>Search Results:</b>
+		<%if @posts.count == 0%>
+		<b>No entries matched your search</b>
+		<%end%>
+		   <%if @posts%>
+		   <%= render :partial=>"show_posts_and_replies", :locals=>{:posts=>@posts} %>
+		   <%# @posts.each do |post| %>
+            <%#= render :partial=>"post_form", :locals=>{:post=>post} %>
+            <%#end %>
+			<%end%>
+      </div>
+</div>

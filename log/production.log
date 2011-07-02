@@ -1,0 +1,48 @@
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-10-01 14:55:06) [GET]
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: posts: SELECT * FROM "posts" WHERE (parent_id IS NULL) ):
+  app/controllers/admin_controller.rb:5:in `index'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-10-01 15:00:23) [GET]
+Rendering template within layouts/default
+Rendering posts/index
+Completed in 38ms (View: 32, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing LoginController#logout (for 127.0.0.1 at 2010-10-01 15:00:30) [GET]
+Redirected to http://localhost:3000/login/login
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/login/logout]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2010-10-01 15:00:30) [GET]
+Rendering template within layouts/default
+Rendering login/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login/login]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2010-10-01 15:00:41) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"4/u50Su2Vglo79bNSFJXKNA4ozUE8tJQpdBs8gQxJa4=", "user_name"=>"newuser", "password"=>"newuser"}
+Rendering template within layouts/default
+Rendering login/login
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/login/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-10-01 15:00:43) [GET]
+Rendering template within layouts/default
+Rendering users/new
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/users/new]

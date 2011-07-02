@@ -1,0 +1,118 @@
+<!--
+<div id="wrap">
+<div id="header"></div>
+<div id="nav"></div>
+<div id="main"></div>
+<div id="sidebar"></div>
+<div id="footer"></div>
+</div>
+-->
+ body,
+ html {
+ margin:5px;
+ padding:0;
+ color:#000;
+ }
+.container {
+	margin:	0 auto;
+ 	align:left;
+	line-height:130%;
+	overflow: auto;
+	width: 100%;
+	height:	100%;
+	background-image:url(../images/plain_bg.jpg);
+	background-repeat: no-repeat;
+	font-family: sans-serif
+}
+.main {
+	float:	left;
+	width:	70%;
+	padding:	10px;
+	align:	left;
+	margin:0px 100px
+	
+}
+.sidebar {
+	float:	right;
+	width:	15%;
+	height:	50%;
+	
+}
+.sidebar1 {
+	float:	right;
+	width:	15%;
+	height:	50%;
+}
+.header {
+	padding: 	5px 10px;
+	background:	#ddd;
+	width: 80%;
+}
+.footer {
+	clear:	both;
+	background:	#cc9;
+}
+.replypost {
+	width:	70%;
+	padding:0px 5px ;
+	margin: 30px;
+	border:1px solid blue;
+	word-wrap: break-word;
+}
+#replypost {
+	width:	70%;
+	padding:5px ;
+	margin: 30px;
+	border:1px solid blue;
+}
+
+.post {
+	width:65%;
+	padding:5px;
+	margin:5px;
+	border:1px solid gray;
+	word-wrap: break-word;
+	
+}
+.links {
+	font-style:italic;
+	font-size: 0.7em;
+	text-align:bottom;
+}
+.author {
+	text-align:right;
+	font-size:0.8em;
+	
+	}
+.cheer {
+	
+	text-align : right;
+	font-size:1em;
+   }
+.timestamp {
+	
+	text-align : right;
+	font-size:0.8em;
+}
+img.bg {
+	/* Set rules to fill background */
+	min-height: 100%;
+	min-width: 100% /*1024px; */
+
+	/* Set up proportionate scaling */
+	width: 100%;
+/*	height: auto; */
+	height: 100% ;
+
+	/* Set up positioning */
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+h1 {
+	margin:0;
+}
+h2 {
+	margin:0 0 1em;
+}

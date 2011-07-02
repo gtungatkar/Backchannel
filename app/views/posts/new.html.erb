@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="main">
+        <% form_for(@post) do |f| %>
+        <%= f.error_messages %>
+        <%=f.hidden_field :parent_id %>
+        <p>
+            <%= f.label :description %>
+            <br/>
+            <%= f.text_field :description %>
+        </p>
+        <p>
+            <%= f.submit 'Create' %>
+        </p>
+        <% end %>
+    </div>
+    <div class="headerr" align:"right">
+        <%= link_to 'Back', posts_path %>
+    </div>
+</div>

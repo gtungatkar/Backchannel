@@ -1,0 +1,36 @@
+<div class="container">
+<div class="sidebar">
+    <b>Search Post Activity by Username</b>
+    <% form_tag :controller => 'admin', :action => 'user_activity', :method => 'get' do %>
+    <%= text_field_tag :user_activity, params[:user_activity] %>
+    <%= submit_tag "Search" %>
+    <%#= link_to_function "Clear", "$('search_field').clear()" %>
+    <% end %>
+	<%=link_to('Manage users', :action=>"manage")%>
+</div>
+    <div class="main">
+    	<b>Welcome Administrator</b>
+            <% @posts.each do |post| %>
+            	<%= render :partial=>"posts/post_form", :locals=>{:post=>post} %>
+				  <% post.children.each do |p| %>
+            
+                    <%= render :partial=>"posts/post_form", :locals=>{:post=>p} %>
+            
+            <%end %>
+                <!--div class="post">
+                    <%=h post.description %>
+                    <div class="author">
+                        posted by:<%=h post.user.user_name %>
+                    </div>
+                    <div class="cheer">
+                        cheers: <%=h post.cheer.count %>
+                    </div>
+					<div class="links">
+						<%= render :partial=>"posts/post_form", :locals=>{:post=>post} %>
+					</div>
+                </div-->
+                
+            <% end %>
+        
+    </div>
+</div>

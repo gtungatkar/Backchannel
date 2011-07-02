@@ -1,0 +1,44 @@
+<%if post.parent_id == nil %>
+<div class="post">
+	<%=h post.description %>
+	
+	<div class="author">
+        posted by:<%=h post.user.user_name %>
+    </div>
+    <div class="cheer">
+        cheers: <%=h post.cheer.count %>
+    </div>
+	<div class="timestamp">
+		time: <%=h post.created_at%>
+	</div>
+    <div class="links">
+        <%=link_to_unless(!(is_post_by_user(session[:user_id],post)||(is_admin_user?)),'Edit', edit_post_path(post)) %>
+        <%=link_to_unless(!(is_post_by_user(session[:user_id],post)||(is_admin_user?)),'Delete', post, :confirm => 'Are you sure?', :method => :delete) %>
+        <%=link_to_unless(!((!is_post_by_user(session[:user_id], post) && (is_logged_in?))),'Cheer', "/cheers/new/#{post.id}", :method=>:post) %>
+        <%= link_to_unless(!(is_logged_in?), 'Reply', "/posts/new/#{post.id}") %>
+         
+    </div>
+ </div>
+<%else %>
+<div class="replypost">
+	<%=h post.description %>
+    <div class="author">
+        posted by:<%=h post.user.user_name %>
+    </div>
+    <div class="cheer">
+        cheers: <%=h post.cheer.count %>
+    </div>
+	<div class="timestamp">
+		time: <%=h post.created_at%>
+	</div>
+    <div class="links">
+       <%=link_to_unless(!(is_post_by_user(session[:user_id],post)||(is_admin_user?)),'Edit', edit_post_path(post)) %>
+        <%=link_to_unless(!(is_post_by_user(session[:user_id],post)||(is_admin_user?)),'Delete', post, :confirm => 'Are you sure?', :method => :delete) %>
+        <%=link_to_unless(!((!is_post_by_user(session[:user_id], post) && (is_logged_in?))),'Cheer', "/cheers/new/#{post.id}", :method=>:post) %>
+		
+	    
+        Reply
+		<%#=link_to('Reply', "/posts/new/#{post.id}") %>
+    </div>
+</div>
+<%end %>

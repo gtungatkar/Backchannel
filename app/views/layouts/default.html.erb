@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <%= stylesheet_link_tag 'BackChannel' %>
+		<title>Backchannel Application for CSC 517</title>	
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+              	<%= link_to "Home", :controller=>:posts,:action=>'index' %>
+				 <%if session[:admin_user] == true%>
+				 <%=link_to("Admin Home",:controller=>:admin, :action=>:index) %>
+				 <%end%>
+				<%if session[:user_id] == nil %>
+                <%= link_to "login", :controller=>:login,:action=>'login' %>
+				New User? <%= link_to 'Sign up', :controller=>:users,:action=>:new %>
+                <%else %>
+                <%= link_to "logout",:controller=>:login,:action=>'logout' %>
+                Logged in as <%=session[:user_name] %>
+				<%end %>
+                
+		    </div>
+            <div class="main">
+            	  	<h3>Backchannel application</h3>
+                <p style="color: #cc99">
+                    <b><%= notice %></b>
+                </p>
+            </div>
+       
+	    </div>
+       <%= yield %>
+    </body>
+</html>

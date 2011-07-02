@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="sidebar">
+        <%= link_to 'New post', new_post_path(:parent_id=>nil) %><br/><br/>
+		<br>
+		Search for posts:
+		<% form_tag :controller => 'posts', :action => 'search', :method => 'get' do %>
+        <%= text_field_tag :search, params[:search] %>
+        <br/>
+		<%= radio_button_tag :srch_criteria, 1, false %>By text<br/>
+   		 <%= radio_button_tag :srch_criteria, 2, false %>By users<br/>
+    	<%= submit_tag "Search" %>
+		  <%#= link_to_function "Clear", "$('search_field').clear()" %>
+		
+        <% end %>
+        
+    </div>
+    <%#= link_to 'Back', posts_path %>
+
+	<%= render :partial=>"show_posts_and_replies", :locals=>{:posts=>@posts} %>
+    
+</div>

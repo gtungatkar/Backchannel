@@ -1,0 +1,12 @@
+ 	<div class="main">
+            <% posts.each do |post| %>
+            <%= render :partial=>"post_form", :locals=>{:post=>post} %>
+            <% post.children.each do |p| %>
+            <!--div class="replypost"-->
+                    <%= render :partial=>"post_form", :locals=>{:post=>p} %>
+					<%posts.delete(p)%> <!-- reply displayed, delete it from the original posts list-->
+             <!--/div-->
+            <%end %>
+            <% end %>
+          <br/>
+    </div>

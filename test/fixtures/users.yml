@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+rohan:
+    id: 7
+    user_name: rohan
+    password: <%= User.create_hashed_password('helloworld') %>
+    admin: 1
+    
+gaurav:
+    id: 8
+    user_name: gaurav
+    password: <%= User.create_hashed_password('helloworld') %>
+    admin: 0

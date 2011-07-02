@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="main">
+        <h1>Login index</h1>
+        <% if session[:user_id] != nil %>
+        <%= link_to "logout", :action=>'logout' %>
+        <%end %>
+    </div>
+</div>
